@@ -6,12 +6,7 @@ Repositorio proyecto semestral curso IMT2200 Introducción a Ciencia de Datos ( 
 * @panchoclo3
 * @sebastian18931
 * @Cristobal-Lyon-Diaz
-# Entrega Inicial del Repositorio
 
-## Contexto y motivación
-## Preguntas objetivo
-## Datos
-## Análisis exploratorio de datos
 
 
 
