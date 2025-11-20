@@ -1,4 +1,8 @@
 # IMT2200-Proyecto-Semestral
+
+## Librerias usadas
+pandas, numpy, matplotlib, seaborn y json
+
 ## Resumen del proyecto
 
 lorem ipsum
