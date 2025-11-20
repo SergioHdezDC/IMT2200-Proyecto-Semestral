@@ -7,6 +7,8 @@ pandas, numpy, matplotlib, seaborn y json
 
 El proyecto, desarrollado por nosotros, busca optimizar el proceso de selección de **Enseña Chile** mediante un enfoque de ciencia de datos que cruza registros históricos internos con fuentes públicas (MINEDUC, DEMRE) para identificar patrones de éxito en el proceso de postulación. El objetivo es caracterizar qué variables académicas y sociodemográficas predicen realmente un buen desempeño, permitiendo a la fundación mejorar su reclutamiento detectando talento en diversas universidades y carreras mediante la ciencia de datos, ayudándoles a aumentar el porcentaje de exito de sus postulantes en el proceso.
 
+El desarrollo principal del proyecto se encuentra en el notebook "NotebookEnseñaChile.ipynb"
+
 ## Objetivos específicos:
 
 - Caracterizar históricamente a postulantes y seleccionados.
