@@ -1,7 +1,7 @@
 # IMT2200-Proyecto-Semestral
 
 ## Librerias usadas
-pandas, numpy, matplotlib, seaborn y json
+pandas, numpy, matplotlib, seaborn, json, pathlib, IPython, datetime, ftfy, unicodedata, sklearn y gdown(para trabajar en colab)
 
 ## Resumen del proyecto
 
