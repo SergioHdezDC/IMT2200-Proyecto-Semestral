@@ -13,7 +13,9 @@ El proyecto, desarrollado por nosotros, busca optimizar el proceso de selección
 
 Con los datos analizados podemos concluir que segun el modelo que hicimos se podrian elegir las universidades de UC, UAI de Santiago y viña del mar, U. Tecnica de Federico Santa Matia y la UANDES, o las carreras de college, filosofia, educion media en fisica o religion y planificacion urbana, para enfocar donde priorizar la propaganda de la fundacion, pero este modelo no acierta mucho, tiene mala precision para los seleccionados, ya que estan muy desbalanceados los datos, hay muchos no seleccionados, por ende no creemos que sea la mejor opción.
 
-Por otra parte, con el EDA podemos ver que las mejores universidades y carreras para que enseña Chile se enfoque son:
+Por otra parte, con el EDA podemos ver que las mejores universidades son la INACAP, UNAB, U. Tecnica Federico Santa Maria, USACH y UCH, y de las carreras solo se diferencia la de Ingenieria por un gran numero.
+
+Como conclusion, sumando ambos analisis creemos poder mejorar el exito en las postulaciones enfocandose en Ingenieria de las universidades de INACAP, Federico Santa Maria y UC, y fuera de la region metropolitana en la UAI de Viña del mar.
 
 
 ## Que podria salir mal?
