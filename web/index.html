@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enseña Chile | Reporte de Análisis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-body: #ffffff;
+        --text-main: #222222;
+        --text-light: #666666;
+        --accent: #d93025;
+        --placeholder-bg: #fff8c5;
+        --border-color: #eaeaea;
+        --highlight-bg: #f7f7f7;
+      }
+
+      body {
+        font-family: "Lora", serif;
+        font-size: 19px;
+        line-height: 1.8;
+        color: var(--text-main);
+        margin: 0;
+        background: var(--bg-body);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        margin-top: 2.5em;
+        margin-bottom: 0.5em;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-top: 0;
+      }
+      h2 {
+        font-size: 2rem;
+        border-bottom: 3px solid var(--text-main);
+        padding-bottom: 10px;
+      }
+      h3 {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-top: 2em;
+      }
+
+      p {
+        margin-bottom: 1.5em;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+
+      header {
+        text-align: center;
+        padding-bottom: 60px;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 60px;
+      }
+
+      header .meta {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      /* Bloques de "Rellename" */
+      .todo-block {
+        background-color: var(--placeholder-bg);
+        border: 1px dashed #d4c060;
+        padding: 20px;
+        border-radius: 4px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: #555;
+        margin: 30px 0;
+      }
+
+      .todo-block strong {
+        color: #000;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* Imágenes */
+      figure {
+        margin: 50px -40px;
+        text-align: center;
+      }
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+      }
+
+      figcaption {
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-top: 15px;
+        text-align: center;
+        font-style: italic;
+      }
+
+      /* Grid de Datos (KPIs) */
+      .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 30px 0;
+      }
+
+      .kpi {
+        text-align: center;
+        font-family: "Inter", sans-serif;
+      }
+
+      .kpi .number {
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .kpi .label {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .highlight-box {
+        background-color: var(--highlight-bg);
+        border-left: 4px solid var(--accent);
+        padding: 20px;
+        margin: 30px 0;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        figure {
+          margin: 30px 0;
+        }
+        .container {
+          padding: 40px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="container">
+      <header>
+        <span class="meta"
+          >Proyecto de Ciencia de Datos &bull; Noviembre 2025</span
+        >
+        <h1>
+          Radiografía del Talento:<br />Análisis de Reclutamiento Enseña Chile
+        </h1>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto 0;
+          "
+        >
+          Un viaje a través de los datos para entender quiénes postulan, quiénes
+          quedan y cómo optimizar la búsqueda de los futuros líderes de la
+          educación.
+        </p>
+      </header>
+
+      <section>
+        <p>
+          Enseña Chile tiene una misión clara, pero el camino para encontrar a
+          los profesionales idóneos está lleno de variables complejas.
+          Históricamente, el proceso de selección ha generado grandes volúmenes
+          de datos que, hasta hoy, escondían patrones cruciales sobre el origen
+          del talento.
+        </p>
+        <p>
+          Este análisis no solo busca describir el pasado, sino proponer una
+          hoja de ruta basada en evidencia para optimizar los esfuerzos de
+          reclutamiento y reducir la incertidumbre en la selección.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. El Perfil del Postulante: ¿Quién toca la puerta?</h2>
+        <p>
+          Antes de hablar de éxito, debemos entender la materia prima. Miles de
+          profesionales se acercan a la fundación cada año, pero ¿cuál es el
+          rostro promedio de este grupo?
+        </p>
+
+        <div class="data-grid">
+          <div class="kpi">
+            <span class="number">X.XXX</span>
+            <span class="label">Postulaciones Históricas</span>
+          </div>
+          <div class="kpi">
+            <span class="number">XX%</span>
+            <span class="label">Porcentaje de aceptacion</span>
+          </div>
+          <div class="kpi">
+            <span class="number">24</span>
+            <span class="label">Edad Promedio Estimada</span>
+          </div>
+        </div>
+
+        <h3>Diversidad Académica de Origen</h3>
+        <p>
+          Al analizar las universidades de origen de la totalidad de los
+          postulantes, observamos una gran dispersión. Sin embargo, existe una
+          fuerte presencia de instituciones tradicionales en la cima del embudo.
+        </p>
+
+        <div class="todo-block">
+          <strong>📝 COMPLETAR AQUÍ:</strong>
+          Describe brevemente el Top 5 de universidades que más envían
+          postulantes (independiente de si quedan o no).
+        </div>
+
+        <figure>
+          <img
+            src="../imagenes/Top 10 Universidades en Postulaciones.png"
+            alt="Gráfico de postulantes por universidad"
+          />
+          <figcaption>
+            Fig 1. Distribución de las instituciones con mayor volumen de
+            postulantes.
+          </figcaption>
+        </figure>
+
+        <h3>Distribución Etaria</h3>
+        <p>
+          El programa atrae principalmente a recién egresados y profesionales
+          jóvenes, con un pico marcado en los 24 y 25 años, lo que sugiere un
+          momento clave en la toma de decisión profesional post-universitaria.
+        </p>
+
+        <figure>
+          <img
+            src="../imagenes/Distribución de Edad en Postulantes.png"
+            alt="Gráfico de distribución de edad"
+          />
+          <figcaption>
+            Fig 2. Distribución de edad en la población de postulantes.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>2. El Embudo: ¿Quiénes son realmente seleccionados?</h2>
+        <p>
+          Aquí es donde la historia cambia. Al cruzar la línea de meta y
+          analizar solo a quienes obtienen la categoría de "Seleccionado", el
+          perfil se estrecha dramáticamente, revelando sesgos implícitos en el
+          proceso histórico.
+        </p>
+
+        <h3>La Dominancia de las Ingenierías</h3>
+        <p>
+          A pesar de ser una fundación educativa, los datos revelan un sesgo
+          histórico sorprendente hacia perfiles técnicos. Las carreras de
+          <strong>Ingeniería Civil</strong> e
+          <strong>Ingeniería Comercial</strong> dominan la tasa de selección.
+        </p>
+
+        <div class="todo-block">
+          <strong>📝 COMPLETAR DATOS:</strong>
+          Insertar porcentaje específico. Ej: "Las ingenierías representan casi
+          el Y% del total de seleccionados."
+        </div>
+
+        <figure>
+          <img
+            src="../imagenes/tendencia_top5_carreras.png"
+            alt="Gráfico de tendencia de carreras seleccionadas"
+          />
+          <figcaption>
+            Fig 3. Tendencia histórica de seleccionados por carrera. La brecha
+            entre ingenierías y otras disciplinas es evidente.
+          </figcaption>
+        </figure>
+
+        <h3>El Perfil "Ideal" Histórico</h3>
+        <p>
+          Si tuviéramos que dibujar al candidato que históricamente ha tenido
+          más éxito en Enseña Chile basado estrictamente en los datos, sería un
+          perfil de excelencia académica y liderazgo tradicional:
+        </p>
+
+        <figure>
+          <img
+            src="../imagenes/Top 10 Universidades en Seleccionados.png"
+            alt="Gráfico de universidades seleccionadas"
+          />
+          <figcaption>
+            Fig 4. Universidades con mayor tasa de seleccionados.
+          </figcaption>
+        </figure>
+
+        <ul
+          style="
+            list-style-type: none;
+            padding: 0;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 30px 0;
+          "
+        >
+          <li style="margin-bottom: 10px">
+            <strong>🎓 Universidad:</strong> Principalmente Pontificia
+            Universidad Católica y Universidad de Chile.
+          </li>
+          <li style="margin-bottom: 10px">
+            <strong>📐 Carrera:</strong> Ingenierías Civiles o Comerciales.
+          </li>
+          <li style="margin-bottom: 10px">
+            <strong>📍 Zona:</strong> Fuerte concentración en la Región
+            Metropolitana y Concepción.
+          </li>
+        </ul>
+
+        <div class="highlight-box">
+          <strong>Pregunta Crítica:</strong>
+          <p style="margin-bottom: 0">
+            Este perfil garantiza excelencia, pero ¿estamos perdiendo talento
+            valioso al enfocarnos tanto en este molde? ¿Qué pasa con candidatos
+            de universidades menos tradicionales o de carreras humanistas?
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. Estudio de Oportunidad: Lo que los datos externos revelan</h2>
+
+        <p>
+          Para responder a la pregunta anterior y ampliar nuestra visión más
+          allá de los datos internos, realizamos un
+          <strong
+            >cruce con bases de datos públicas del Ministerio de
+            Educación</strong
+          >. El objetivo fue analizar la oferta nacional de titulados y
+          compararla con el perfil actual de reclutamiento.
+        </p>
+
+        <h3>El Déficit de Lenguaje y la Oportunidad Humanista</h3>
+        <p>
+          Enseña Chile enfrenta un desafío recurrente: la dificultad para
+          encontrar profesores de lenguaje. Al analizar la oferta académica, nos
+          centramos en carreras afines a las letras y la literatura que hoy no
+          están siendo captadas masivamente.
+        </p>
+
+        <figure>
+          <img
+            src="../imagenes/Top 5 Carreras Agrupadas con más Titulados Idóneos.png"
+            alt="Gráfico de carreras idóneas"
+          />
+          <figcaption>
+            Fig 5. Volumen de titulados en carreras idóneas disponibles en el
+            mercado.
+          </figcaption>
+        </figure>
+
+        <p>
+          Los datos muestran un desbalance estructural en el país: existe una
+          sobreoferta de ingenieros en comparación con carreras potenciales para
+          pedagogía en lenguaje. Sin embargo, hay reservas de talento en
+          <strong>Licenciatura en Letras y Literatura</strong> que representan
+          una oportunidad latente.
+        </p>
+
+        <h3>El Talento Técnico "Invisible" (Matemáticas)</h3>
+        <p>
+          Para el perfil de profesor de matemáticas, detectamos una anomalía
+          estratégica. Existe una gran oferta de profesionales provenientes de
+          instituciones como <strong>INACAP</strong> (Ingenieros y Auditores)
+          que Enseña Chile históricamente no ha considerado en su reclutamiento
+          prioritario.
+        </p>
+        <p>
+          Además, universidades como la <strong>Andrés Bello (UNAB)</strong> y
+          la <strong>Federico Santa María (USM)</strong> generan una gran
+          cantidad de titulados idóneos técnicamente, pero tienen una
+          representación desproporcionadamente baja en la selección final.
+        </p>
+
+        <figure>
+          <img
+            src="../imagenes/Top 10 Universidades con más Titulados Idóneos.png"
+            alt="Gráfico de universidades con titulados idóneos"
+          />
+          <figcaption>
+            Fig 6. Instituciones con mayor volumen de titulados aptos para el
+            programa.
+          </figcaption>
+        </figure>
+
+        <h3>La Brecha Regional</h3>
+        <p>
+          La centralización es evidente. Si bien la Región Metropolitana,
+          Valparaíso y Biobío concentran la oferta, los datos sugieren que la
+          dificultad para llenar vacantes en regiones extremas podría mitigarse
+          mirando localmente.
+        </p>
+
+        <figure>
+          <img
+            src="../imagenes/Titulados Idóneos por Región.png"
+            alt="Gráfico de titulados por región"
+          />
+          <figcaption>
+            Fig 7. Distribución geográfica de titulados idóneos.
+          </figcaption>
+        </figure>
+
+        <p>
+          Regiones como <strong>La Araucanía y Los Lagos</strong> poseen una
+          cantidad considerable de titulados idóneos locales. Reclutar
+          profesionales de Santiago para moverlos a estas zonas ha demostrado
+          ser difícil; la estrategia basada en datos sugiere intensificar la
+          búsqueda en las instituciones locales de estas regiones.
+        </p>
+
+        <div class="highlight-box">
+          <h4>Hallazgos de Oportunidad:</h4>
+          <ul style="margin-top: 10px">
+            <li>
+              <strong>Instituciones Subutilizadas:</strong> INACAP, USM y UNAB
+              poseen alto volumen de titulados pero baja selección.
+            </li>
+            <li>
+              <strong>Carreras Clave:</strong> Auditoría y Licenciatura en
+              Letras son nichos a explotar.
+            </li>
+            <li>
+              <strong>Estrategia Regional:</strong> El reclutamiento local en el
+              sur es estadísticamente más viable que la movilidad desde
+              Santiago.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>
+          4. Modelando el Éxito: ¿Podemos predecir al próximo seleccionado?
+        </h2>
+        <p>
+          Intentamos entrenar un modelo de Machine Learning para predecir la
+          probabilidad de selección de un candidato basándonos en sus variables
+          iniciales.
+        </p>
+
+        <h3>Resultados del Modelo</h3>
+        <p>
+          El modelo identificó ciertas "zonas calientes" de probabilidad. Según
+          el algoritmo, un postulante tiene estadísticamente más chances si
+          proviene de:
+        </p>
+        <ul>
+          <li><strong>Universidades:</strong> UC, UAI, UANDES.</li>
+          <li>
+            <strong>Carreras Sorpresa:</strong> College, Filosofía,
+            Planificación Urbana (alta tasa de conversión, aunque bajo volumen).
+          </li>
+        </ul>
+
+        <figure>
+          <img
+            src="https://via.placeholder.com/800x300/f0f0f0/aaaaaa?text=GRÁFICO:+Resultados+del+Modelo"
+            alt="Resultados del Modelo Predictivo"
+          />
+          <figcaption>
+            Fig 8. Variables con mayor peso en la predicción de éxito.
+          </figcaption>
+        </figure>
+
+        <div
+          class="todo-block"
+          style="border-color: #d93025; background-color: #fff0f0"
+        >
+          <strong>⚠️ Nota Técnica:</strong>
+          <p>
+            Es crucial mencionar que el modelo sufre de baja precisión debido al
+            <strong>desbalance de clases</strong> (muchos postulantes rechazados
+            vs. pocos seleccionados). Por ende, no recomendamos usarlo como
+            filtro automático, sino como brújula para orientar estrategias de
+            marketing.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>5. Conclusiones y Hoja de Ruta</h2>
+        <p>
+          El análisis de los datos históricos, sumado al estudio de oportunidad
+          externo, nos permite trazar una nueva estrategia de reclutamiento.
+        </p>
+
+        <h3>Recomendaciones Estratégicas</h3>
+        <p>
+          Proponemos una estrategia de
+          <strong>focalización inteligente</strong> basada en tres pilares:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Consolidar lo seguro:</strong> Mantener la fuerte presencia
+            en Ingenierías de la UC y USM, que garantizan el flujo base de
+            seleccionados.
+          </li>
+          <li>
+            <strong>Ampliar el horizonte (La Gran Oportunidad):</strong> Romper
+            el sesgo histórico e iniciar campañas activas en
+            <strong>INACAP y UNAB</strong> para perfiles matemáticos, donde la
+            oferta es abundante.
+          </li>
+          <li>
+            <strong>Descentralización Real:</strong> Dejar de buscar solo en
+            Santiago para llenar vacantes en el sur. Focalizar recursos en
+            universidades regionales de La Araucanía y Los Lagos para captar
+            talento con arraigo local.
+          </li>
+        </ol>
+
+        <p
+          style="
+            margin-top: 40px;
+            font-style: italic;
+            color: #777;
+            text-align: center;
+          "
+        >
+          "El riesgo de cambiar la estrategia es perder a los candidatos de
+          siempre. El riesgo de no cambiarla es seguir obteniendo los mismos
+          resultados limitados."
+        </p>
+      </section>
+    </article>
+
+    <footer
+      style="
+        background: #f9f9f9;
+        padding: 60px 20px;
+        text-align: center;
+        margin-top: 80px;
+      "
+    >
+      <div class="container" style="padding: 0">
+        <p style="font-family: 'Inter', sans-serif; font-weight: 600">
+          Equipo de Ciencia de Datos
+        </p>
+        <p style="font-size: 0.9rem; color: #666">
+          Sergio Hernández &bull; Francisco Maureira &bull; Sebastián &bull;
+          Cristóbal Lyon
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 30px; color: #999">
+          Repositorio en GitHub:
+          <a href="#" style="color: #999">Link al Proyecto</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
