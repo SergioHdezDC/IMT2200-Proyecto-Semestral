@@ -122,8 +122,8 @@
       }
 
       .author img {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 10px;
@@ -346,40 +346,88 @@
           líderes de la educación chilena.
         </p>
       </header>
-
       <section>
         <p>
-          Enseña Chile tiene una misión clara, pero el camino para encontrar a
-          los profesionales idóneos está lleno de variables complejas.
-          Históricamente, el proceso de selección ha generado grandes volúmenes
-          de datos que, hasta hoy, escondían patrones cruciales sobre el origen
-          del talento.
+          Enseña Chile posee una misión definida, pero la identificación de
+          profesionales idóneos involucra múltiples variables complejas.
+          Históricamente, el proceso de selección ha generado un volumen de
+          datos que, analizados en profundidad, revelan patrones determinantes
+          sobre el origen y las características del talento seleccionado.
         </p>
         <p>
-          Este análisis no solo busca describir el pasado utilizando un set de
-          datos que abarca <strong>15 años de historia</strong>, sino proponer
-          una hoja de ruta basada en evidencia para optimizar los esfuerzos de
-          reclutamiento y reducir la incertidumbre en la selección futura.
+          El presente análisis examina
+          <strong>15 años de registros históricos</strong> con el objetivo de
+          proponer una estrategia de reclutamiento basada en evidencia empírica.
+          Se busca optimizar la asignación de recursos y sistematizar la
+          búsqueda de candidatos que cumplan con los altos estándares de la
+          organización.
         </p>
       </section>
 
-      <section>
-        <h2>1. El Perfil del Postulante: ¿Quién toca la puerta?</h2>
+      <nav
+        class="table-of-contents"
+        style="
+          margin-bottom: 50px;
+          padding: 20px;
+          background: #f9f9f9;
+          border-left: 4px solid #202124;
+        "
+      >
+        <h3 style="margin-top: 0; font-size: 1.1rem; color: #333">
+          Tabla de Contenidos
+        </h3>
+        <ol>
+          <li>
+            <a style="color: #222222" href="#perfil-postulante"
+              >Perfil Demográfico y Académico del Postulante</a
+            >
+          </li>
+          <li>
+            <a style="color: #222222" href="#embudo-seleccion"
+              >Análisis del Embudo: Perfil del Seleccionado</a
+            >
+          </li>
+          <li>
+            <a style="color: #222222" href="#estudio-oportunidad"
+              >Análisis de Mercado y Oferta Académica</a
+            >
+          </li>
+          <li>
+            <a style="color: #222222" href="#modelando-exito"
+              >Modelos Predictivos</a
+            >
+          </li>
+          <li>
+            <a style="color: #222222" href="#conclusiones"
+              >Conclusiones Estratégicas</a
+            >
+          </li>
+          <li>
+            <a style="color: #222222" href="#comentarios"
+              >Limitaciones y Trabajo Futuro</a
+            >
+          </li>
+        </ol>
+      </nav>
+
+      <section id="perfil-postulante">
+        <h2>1. Perfil Demográfico y Académico del Postulante</h2>
         <p>
-          Antes de hablar de éxito, debemos entender la materia prima. Miles de
-          profesionales se acercan a la fundación cada año, pero ¿cuál es el
-          rostro promedio de este grupo? Al consolidar la base histórica, las
-          cifras nos dan una primera dimensión del desafío:
+          La propuesta de valor de Enseña Chile se fundamenta en la atracción de
+          profesionales de alto desempeño para impactar en contextos educativos
+          vulnerables. El análisis de la base histórica de postulantes permite
+          validar si la convocatoria actual resuena con el perfil objetivo de la
+          organización.
         </p>
 
         <div class="data-grid">
           <div class="kpi">
             <span class="number">697.490</span>
-            <span class="label">Postulaciones Totales</span>
+            <span class="label">Total de Postulaciones</span>
           </div>
           <div class="kpi">
             <span class="number">2.3%</span>
-            <span class="label">Tasa de Aceptación</span>
+            <span class="label">Tasa de Selección Global</span>
           </div>
           <div class="kpi">
             <span class="number">38</span>
@@ -387,13 +435,13 @@
           </div>
         </div>
 
-        <h3>Diversidad Académica de Origen</h3>
+        <h3>Distribución por Institución de Origen</h3>
         <p>
-          Al analizar las universidades de origen de la totalidad de los
-          postulantes, observamos una gran dispersión inicial. Sin embargo,
-          existe una fuerte presencia de instituciones tradicionales desde el
-          inicio del embudo, sugiriendo que la marca empleadora de Enseña Chile
-          resuena más fuerte en ciertos campus tradicionales.
+          Los datos evidencian una concentración significativa de postulantes
+          provenientes de instituciones universitarias tradicionales. Esto
+          sugiere que el posicionamiento de marca de la fundación es efectivo en
+          segmentos académicos específicos, atrayendo a perfiles que valoran el
+          desempeño académico y el liderazgo social.
         </p>
 
         <figure>
@@ -402,20 +450,19 @@
             alt="Gráfico de postulantes por universidad"
           />
           <figcaption>
-            Fig 1. Distribución de las instituciones con mayor volumen de
-            postulantes.
+            Fig 1. Volumen de postulaciones desglosado por institución de
+            educación superior.
           </figcaption>
         </figure>
 
-        <h3>El Factor Edad: Una sorpresa en los datos</h3>
+        <h3>Análisis Etario</h3>
         <p>
-          Aunque el programa busca atraer principalmente a recién egresados y
-          profesionales jóvenes en el momento clave de decisión
-          post-universitaria, los datos muestran una realidad más compleja. La
-          edad promedio de postulación se sitúa en los 38 años, con una
-          distribución (como se observa en la <em>Fig 2</em>) que se extiende
-          desde los 20 hasta los 55 años, indicando un interés transversal de
-          profesionales con trayectoria.
+          Se observa una diversidad etaria considerable en la base de
+          postulantes. Con un promedio de 38 años (ver <em>Fig 2</em>), el
+          interés por el programa no se limita a recién egresados, abarcando
+          también a profesionales con trayectoria laboral consolidada. No
+          obstante, el factor determinante en la selección posterior parece
+          estar más correlacionado con la formación académica que con la edad.
         </p>
 
         <figure>
@@ -424,31 +471,29 @@
             alt="Gráfico de distribución de edad"
           />
           <figcaption>
-            Fig 2. Distribución de edad en la población total de postulantes.
+            Fig 2. Histograma de distribución de edad de los postulantes.
           </figcaption>
         </figure>
       </section>
 
-      <section>
-        <h2>2. El Embudo: ¿Quiénes son realmente seleccionados?</h2>
+      <section id="embudo-seleccion">
+        <h2>2. Análisis del Embudo: Características del Perfil Seleccionado</h2>
         <p>
-          Aquí es donde la historia cambia. Al cruzar la línea de meta y
-          analizar solo a quienes obtienen la categoría de "Seleccionado", el
-          perfil se estrecha dramáticamente, revelando sesgos implícitos en el
-          proceso histórico de selección.
+          Al examinar el segmento de candidatos que superan todas las etapas del
+          proceso ("Seleccionados"), se identifican patrones rígidos en cuanto a
+          la formación de origen. Los datos históricos indican que la
+          organización prioriza competencias analíticas y una formación
+          académica rigurosa.
         </p>
 
-        <h3>La Dominancia de las Ingenierías</h3>
+        <h3>Prevalencia de Ingeniería y Universidades Complejas</h3>
         <p>
-          A pesar de ser una fundación educativa, los datos revelan una
-          concentración sorprendente hacia perfiles técnicos. Los números son
-          contundentes:
+          Las estadísticas revelan una inclinación predominante hacia perfiles
+          técnicos de alta exigencia:
           <strong
-            >las ingenierías representan el 63% del total de
-            seleccionados</strong
-          >
-          histórico. Las carreras de Ingeniería Civil e Ingeniería Comercial
-          dominan la tasa de selección por sobre las pedagogías o humanidades.
+            >las carreras de ingeniería representan el 63% del total histórico
+            de seleccionados</strong
+          >.
         </p>
 
         <figure>
@@ -457,47 +502,38 @@
             alt="Gráfico de tendencia de carreras seleccionadas"
           />
           <figcaption>
-            Fig 3. Tendencia histórica de seleccionados por carrera. La brecha
-            entre ingenierías (líneas superiores) y otras disciplinas es
-            evidente y sostenida.
+            Fig 3. Evolución histórica de seleccionados agrupados por carrera,
+            destacando Ingeniería Civil y Comercial.
           </figcaption>
         </figure>
 
-        <h3>Retrato del Seleccionado Histórico</h3>
+        <h3>Instituciones con Mayor Tasa de Conversión</h3>
         <p>
-          Si utilizáramos los datos para construir el perfil del candidato que
-          históricamente ha tenido más probabilidad de éxito, nos encontraríamos
-          con el siguiente arquetipo de excelencia tradicional:
+          Existe una correlación directa entre la institución de egreso y la
+          probabilidad de selección. Históricamente, los candidatos provenientes
+          de la <strong>Pontificia Universidad Católica (UC)</strong> y la
+          <strong>Universidad de Chile (UCH)</strong> presentan las tasas de
+          efectividad más altas.
         </p>
 
-        <div class="profile-card">
+        <div class="profile-card" style="border-left: 5px solid #444">
           <div class="profile-header">
-            <h4>Perfil Predominante</h4>
-            <span style="color: #777; font-size: 0.9rem"
-              >Basado en análisis de datos históricos (15 años)</span
+            <h4>Perfil de Referencia Histórico</h4>
+            <span style="color: #555; font-size: 0.9rem"
+              >Basado en tasas de conversión</span
             >
           </div>
           <div class="profile-details">
             <div class="detail-item">
-              <strong>Universidad de Origen</strong>
-              Pontificia Universidad Católica y Universidad de Chile.
+              <strong>Instituciones Principales</strong>
+              UC y Universidad de Chile.
             </div>
             <div class="detail-item">
-              <strong>Carrera Base</strong>
-              Ingeniería Civil o Ingeniería Comercial.
-            </div>
-            <div class="detail-item">
-              <strong>Origen Geográfico</strong>
-              Alta concentración en Región Metropolitana y Bio Bio.
+              <strong>Áreas de Formación</strong>
+              Ingeniería Civil e Ingeniería Comercial.
             </div>
           </div>
         </div>
-
-        <p>
-          Este fenómeno se refuerza al observar las siguientes visualizaciones,
-          donde las instituciones de elite concentran la mayor parte de la torta
-          de seleccionados.
-        </p>
 
         <figure>
           <img
@@ -505,120 +541,85 @@
             alt="Gráfico de universidades seleccionadas"
           />
           <figcaption>
-            Fig 4. Universidades con mayor tasa de seleccionados.
+            Fig 4. Participación porcentual de las distintas universidades en el
+            total de seleccionados.
           </figcaption>
         </figure>
 
-        <p>
-          En cuanto a la edad, curiosamente
-          <strong>no existe una diferencia significativa</strong> en la
-          distribución etaria entre postulantes y seleccionados. El filtro de
-          selección no discrimina por edad, sino que parece hacerlo fuertemente
-          por formación académica.
-        </p>
-
-        <figure>
-          <img
-            src="../imagenes/Distribución de Edad_ Postulantes vs. Seleccionados.png"
-            alt="Gráfico de comparación de edad"
-          />
-          <figcaption>
-            Fig 5. Comparativa de edad: El perfil etario se mantiene constante
-            antes y después del filtro de selección.
-          </figcaption>
-        </figure>
-
-        <div class="highlight-box">
-          <strong>Pregunta Crítica para la Organización:</strong>
+        <div
+          class="highlight-box"
+          style="background-color: #f1f3f4; border-color: #888"
+        >
+          <strong>Diagnóstico Estratégico:</strong>
           <p style="margin-bottom: 0">
-            Este perfil actual garantiza excelencia académica y liderazgo
-            probado. Sin embargo, ¿estamos dejando talento valioso sobre la mesa
-            al operar bajo este molde implícito? ¿Qué sucede con los candidatos
-            de universidades menos tradicionales o de carreras humanistas que no
-            pasan el corte actual?
+            Enseña Chile mantiene un estándar de selección enfocado en la
+            excelencia académica. El objetivo estratégico no consiste en
+            flexibilizar estos requisitos, sino en identificar nuevos segmentos
+            de candidatos que cumplan con este mismo nivel de rigor y que
+            actualmente no están siendo captados.
           </p>
         </div>
       </section>
 
-      <section>
-        <h2>3. Estudio de Oportunidad: Lo que los datos externos revelan</h2>
+      <section id="estudio-oportunidad">
+        <h2>3. Análisis de Mercado y Oferta Académica Nacional</h2>
 
         <p>
-          Para responder a la pregunta anterior y ampliar nuestra visión más
-          allá de los datos internos, realizamos un
-          <strong
-            >cruce con bases de datos públicas del Ministerio de
-            Educación</strong
-          >, restringiendo el análisis a los
-          <strong>últimos 5 años</strong> para garantizar vigencia. El objetivo:
-          comparar la oferta nacional de titulados versus el perfil actual de
-          reclutamiento.
+          Se realizó un cruce de información entre los datos internos y la base
+          de titulados del <strong>MINEDUC (últimos 5 años)</strong>. Este
+          análisis permite distinguir entre la oferta masiva de profesionales y
+          aquellos segmentos específicos que se alinean con los requisitos de la
+          fundación.
         </p>
 
-        <h3>El Déficit de Lenguaje y la Oportunidad Humanista</h3>
+        <h3>Volumen vs. Alineación de Perfil</h3>
         <p>
-          Enseña Chile enfrenta un desafío recurrente operativo: la dificultad
-          para encontrar profesores de lenguaje. Al analizar la oferta académica
-          nacional, nos centramos en carreras afines a las letras y la
-          literatura que hoy no están siendo captadas masivamente por el radar
-          de reclutamiento.
-        </p>
-
-        <figure>
-          <img
-            src="../imagenes/Top_5_Carreras_Agrupadas.png"
-            alt="Gráfico de carreras idóneas"
-          />
-          <figcaption>
-            Fig 6. Volumen de titulados en carreras idóneas disponibles en el
-            mercado nacional.
-          </figcaption>
-        </figure>
-
-        <p>
-          Los datos evidencian un desbalance estructural en el país: existe una
-          sobreoferta masiva de ingenieros en comparación con carreras
-          potenciales para pedagogía en lenguaje. Sin embargo, detectamos
-          reservas de talento en
-          <strong>Licenciatura en Letras y Literatura</strong> que representan
-          una oportunidad latente de diversificación.
-        </p>
-
-        <h3>El Talento Técnico "Invisible" (Matemáticas)</h3>
-        <p>
-          Para el perfil de profesor de matemáticas, detectamos una anomalía
-          estratégica. Existe una gran oferta de profesionales provenientes de
-          instituciones como <strong>INACAP</strong> (específicamente Ingenieros
-          en ejecución y Auditores) que Enseña Chile históricamente no ha
-          priorizado.
-        </p>
-        <p>
-          Asimismo, universidades como la <strong>Andrés Bello (UNAB)</strong> y
-          la <strong>Federico Santa María (USM)</strong> generan una gran
-          cantidad de titulados técnicos idóneos, pero tienen una representación
-          desproporcionadamente baja en la selección final en comparación a su
-          volumen de egresados.
+          Los datos del sistema educativo muestran un alto volumen de titulados
+          en instituciones técnicas y universidades masivas (ej. INACAP).
+          <br /><br />
+          <strong>Análisis de Ajuste:</strong> Si bien estas instituciones
+          aportan un gran número de egresados al mercado laboral, el análisis de
+          competencias y perfil académico sugiere que el foco de reclutamiento
+          para Enseña Chile —dado su énfasis en formación universitaria
+          compleja— no debe centrarse en el volumen, sino en la equivalencia de
+          estándares académicos.
         </p>
 
         <figure>
           <img
             src="../imagenes/Top 10 Universidades con más Titulados Idóneos.png"
-            alt="Gráfico de universidades con titulados idóneos"
+            alt="Gráfico de oferta de mercado"
           />
           <figcaption>
-            Fig 7. Instituciones con mayor volumen de titulados aptos para el
-            programa (Oportunidad de Mercado).
+            Fig 5. Oferta total de titulados en el mercado nacional.
           </figcaption>
         </figure>
 
-        <h3>La Brecha Regional: Descentralizando la Búsqueda</h3>
+        <h3>Identificación de Instituciones Pares</h3>
         <p>
-          La centralización es un dolor evidente. Si bien la Región
-          Metropolitana, Valparaíso y Biobío concentran la oferta académica, los
-          datos sugieren que la dificultad para llenar vacantes en regiones
-          extremas podría mitigarse mirando localmente en lugar de trasladar
-          profesionales.
+          Al filtrar el mercado por complejidad académica y rigor en ingeniería,
+          se identifican tres instituciones que presentan un perfil de egreso
+          comparable al de la UC y la UCH, pero que cuentan con una
+          sub-representación histórica en la selección:
         </p>
+        <ul>
+          <li>
+            <strong>Universidad Técnica Federico Santa María (USM):</strong>
+            Institución con un fuerte enfoque en ciencias duras e ingeniería,
+            cuyas competencias matemáticas se alinean con los requisitos del
+            programa.
+          </li>
+          <li>
+            <strong>Universidad Adolfo Ibáñez (UAI):</strong> Especialmente en
+            su sede de Viña del Mar, ofrece candidatos con formación en negocios
+            e ingeniería, combinando liderazgo y capacidad analítica.
+          </li>
+          <li>
+            <strong>Universidad Andrés Bello (UNAB):</strong> Cuenta con
+            programas de ingeniería y ciencias exactas consolidados que
+            representan una fuente de talento adicional a considerar.
+          </li>
+        </ul>
 
         <figure>
           <img
@@ -626,151 +627,162 @@
             alt="Gráfico de titulados por región"
           />
           <figcaption>
-            Fig 8. Distribución geográfica de titulados idóneos por región.
+            Fig 6. Distribución geográfica de titulados idóneos, destacando la
+            Región de Valparaíso como un polo estratégico de talento.
           </figcaption>
         </figure>
-
-        <p>
-          Regiones como <strong>La Araucanía y Los Lagos</strong> poseen una
-          cantidad considerable de titulados idóneos locales. Históricamente,
-          reclutar profesionales de Santiago para moverlos a estas zonas ha
-          demostrado ser logísticamente complejo; la estrategia basada en datos
-          sugiere intensificar la búsqueda directa en las instituciones locales
-          de estas regiones (Universidades regionales e Institutos
-          Profesionales).
-        </p>
       </section>
 
-      <section>
-        <h2>
-          4. Modelando el Éxito: ¿Podemos predecir al próximo seleccionado?
-        </h2>
-        <p>
-          Como parte del ejercicio analítico, entrenamos un modelo de Machine
-          Learning para intentar predecir la probabilidad de selección de un
-          candidato basándonos únicamente en sus variables iniciales.
-        </p>
-
-        <h3>Resultados del Modelo</h3>
-        <p>
-          El modelo identificó ciertas "zonas calientes" de probabilidad. Según
-          el algoritmo, un postulante tiene estadísticamente más chances si
-          proviene de:
-        </p>
-        <ul>
-          <li><strong>Universidades:</strong> UC, UAI, UANDES.</li>
-          <li>
-            <strong>Carreras Sorpresa:</strong> College, Filosofía y
-            Planificación Urbana (muestran alta tasa de conversión, aunque bajo
-            volumen histórico).
-          </li>
-        </ul>
-
-        <figure>
-          <img
-            src="https://via.placeholder.com/800x300/f0f0f0/aaaaaa?text=GRÁFICO:+Resultados+del+Modelo"
-            alt="Resultados del Modelo Predictivo"
-          />
-          <figcaption>
-            Fig 9. Variables con mayor peso (Feature Importance) en la
-            predicción de éxito.
-          </figcaption>
-        </figure>
-
-        <div
-          class="todo-block"
-          style="border-color: #d93025; background-color: #fff0f0"
-        >
-          <strong>⚠️ Nota Técnica sobre el Modelo:</strong>
-          <p style="margin-bottom: 0">
-            Es crucial mencionar que el modelo sufre de baja precisión debido al
-            <strong>fuerte desbalance de clases</strong> (existen muchísimos más
-            postulantes rechazados que seleccionados). Por ende, nuestra
-            recomendación técnica es
-            <strong
-              >no utilizar este modelo como filtro automático de
-              selección</strong
-            >, sino como una brújula para orientar estrategias de marketing y
-            atracción.
-          </p>
-        </div>
+      <section id="modelando-exito">
+        <h2>4. A laburar.....</h2>
       </section>
 
-      <section>
-        <h2>5. Conclusiones y Recomendaciones Estratégicas</h2>
+      <section id="conclusiones">
+        <h2>5. Conclusiones y Propuesta Estratégica</h2>
         <p>
-          Tras analizar 15 años de datos internos y contrastarlos con el
-          panorama educativo nacional, hemos llegado a conclusiones que permiten
-          trazar una nueva hoja de ruta para Enseña Chile. El análisis confirma
-          que la fundación ha sido excepcionalmente exitosa reclutando un perfil
-          específico (Ingenieros de universidades de élite), pero que el
-          crecimiento futuro depende de la diversificación.
+          El análisis de datos confirma que la estrategia óptima para Enseña
+          Chile no es modificar su perfil de ingreso, sino
+          <strong
+            >expandir su búsqueda hacia instituciones equivalentes en exigencia
+            académica</strong
+          >. La decisión de mantener el foco en la formación universitaria de
+          alta complejidad es coherente con los objetivos de la fundación.
         </p>
 
-        <h3>Estrategia Propuesta: "Focalización Inteligente"</h3>
+        <h3>Estrategia de Consolidación y Expansión</h3>
         <p>
-          Proponemos abandonar el enfoque de "talla única" y adoptar una
-          estrategia diferenciada basada en tres pilares de acción:
+          Se recomienda una estrategia de reclutamiento focalizada en tres ejes
+          para maximizar la captación de talento idóneo:
         </p>
 
         <ol class="strategic-list">
           <li>
-            <strong>Consolidar el Núcleo (Lo Seguro):</strong>
-            <br />Mantener y nutrir la fuerte presencia en las facultades de
-            Ingeniería de la <strong>UC y USM</strong>. Estos canales garantizan
-            el flujo base de seleccionados de alta calidad y liderazgo que hoy
-            sostienen el programa. No se debe descuidar esta fuente.
+            <strong>Profundización en el Núcleo (UC y UCH):</strong>
+            <br />Mantener la presencia en las facultades de Ingeniería, pero
+            ampliar activamente la convocatoria hacia carreras de alta exigencia
+            cuantitativa y científica que hoy tienen menor visibilidad, tales
+            como
+            <strong
+              >Licenciatura en Matemáticas, Estadística, Licenciatura en Ciencia
+              de Datos y Computación</strong
+            >.
           </li>
           <li>
-            <strong>Explotar la "Oportunidad Invisible" (Expansión):</strong>
-            <br />Romper el sesgo histórico e iniciar campañas piloto de
-            reclutamiento activo en <strong>INACAP y UNAB</strong>,
-            específicamente para perfiles matemáticos (Auditores, Ing.
-            Ejecución). Aquí la oferta de titulados es abundante y actualmente
-            subutilizada.
+            <strong
+              >Incorporación de Pares Académicos (USM, UAI y UNAB):</strong
+            >
+            <br />Reconocer a la
+            <strong>Universidad Técnica Federico Santa María</strong>, la
+            <strong>Universidad Adolfo Ibáñez</strong> y la
+            <strong>Universidad Andrés Bello</strong> como fuentes prioritarias
+            de reclutamiento. Sus egresados de ingeniería poseen un perfil
+            técnico comparable al núcleo tradicional y representan una
+            oportunidad de crecimiento sin sacrificio de estándares.
           </li>
           <li>
-            <strong>Descentralización Real (Eficiencia):</strong>
-            <br />Cambiar el paradigma de movilidad. En lugar de buscar en
-            Santiago para llenar vacantes en el sur, focalizar recursos de
-            marketing en universidades regionales de
-            <strong>La Araucanía y Los Lagos</strong>. Los datos sugieren que el
-            talento existe localmente, lo que aumentaría la retención y el
-            arraigo comunitario de los profesores.
+            <strong>Descentralización Estratégica:</strong>
+            <br />Focalizar los esfuerzos regionales en polos de alta calidad
+            académica específica, concretamente la
+            <strong>UAI Viña del Mar</strong> y la
+            <strong>USM Valparaíso</strong>. Esto permite descentralizar la
+            selección asegurando la equivalencia de competencias.
           </li>
         </ol>
 
-        <h3>Análisis de Riesgo: ¿Qué podría salir mal?</h3>
+        <h3>Análisis de Riesgo</h3>
         <p>
-          Toda decisión basada en datos conlleva riesgos. Al pivotar la
-          estrategia hacia instituciones nuevas (como INACAP o universidades
-          regionales), existe el temor de que la "marca" Enseña Chile pierda
-          tracción en sus nichos tradicionales, o que los nuevos perfiles tengan
-          tasas de deserción diferentes.
+          El principal riesgo detectado no es la exclusión de la formación
+          técnica masiva, ya que esta no se alinea con el perfil actual buscado.
+          <strong
+            >El riesgo latente es el sesgo de selección dentro de la élite
+            académica</strong
+          >: limitar la búsqueda exclusivamente a dos universidades (UC/UCH)
+          implica desaprovechar un contingente de profesionales de la USM y UAI
+          que poseen las mismas capacidades de liderazgo y rigor intelectual
+          necesarias para el aula.
         </p>
+      </section>
+
+      <section
+        id="comentarios"
+        style="
+          background-color: #fcfcfc;
+          border-top: 1px solid #e0e0e0;
+          padding-top: 20px;
+          margin-top: 40px;
+        "
+      >
+        <h2>6. Limitaciones del Estudio y Recomendaciones Futuras</h2>
+
+        <h3>Oportunidad: Arbitraje de Empleabilidad</h3>
         <p>
-          Sin embargo, la conclusión del equipo es contundente:
-          <strong>el riesgo de no cambiar es mayor</strong>. Seguir pescando en
-          la misma pecera (Ingenieros UC/Chile) tiene un techo natural y
-          perpetúa la escasez de profesores de lenguaje y la falta de
-          diversidad. La expansión controlada hacia estos nuevos nichos ofrece
-          un potencial de crecimiento que supera los riesgos operativos.
+          Para futuras iteraciones de este análisis, se sugiere incorporar
+          variables de
+          <strong>tasas de empleabilidad por carrera e institución</strong>. Una
+          hipótesis de alto valor estratégico es identificar carreras con altos
+          estándares académicos pero saturación laboral o empleabilidad
+          moderada. Estos nichos representan una oportunidad eficiente de
+          reclutamiento, ya que el costo de oportunidad para el postulante es
+          menor, aumentando la probabilidad de atracción y retención.
         </p>
 
-        <p
-          style="
-            margin-top: 60px;
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #555;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 40px;
-          "
-        >
-          "El riesgo de cambiar la estrategia es perder a los candidatos de
-          siempre. El riesgo de no cambiarla es seguir obteniendo los mismos
-          resultados limitados."
+        <h3>Limitaciones de la Data Histórica</h3>
+        <p>
+          El presente estudio enfrentó restricciones significativas debido a la
+          estructura de los datos proporcionados:
+        </p>
+        <ul>
+          <li>
+            <strong>Falta de granularidad demográfica:</strong> La ausencia de
+            datos estructurados sobre la región de origen, género y nivel
+            socioeconómico de los postulantes limitó la capacidad de realizar un
+            análisis de diversidad más profundo.
+          </li>
+          <li>
+            <strong>Ausencia de métricas de desempeño:</strong> No se contó con
+            acceso a evaluaciones de desempeño docente posterior a la selección.
+            Esto impide cerrar el ciclo de análisis (feedback loop) para
+            determinar qué variables de entrada predicen realmente el éxito en
+            el aula.
+          </li>
+          <li>
+            <strong>Proxies de Excelencia:</strong> Al no disponer de puntajes
+            de ingreso (PAES/PSU) ni promedios de notas de los candidatos, se
+            debió recurrir a la Universidad y Carrera como <em>proxies</em> de
+            excelencia académica.
+          </li>
+        </ul>
+
+        <h3>Recomendaciones para la Gestión de Datos</h3>
+        <p>
+          Para robustecer los modelos predictivos y el análisis estratégico, se
+          recomienda encarecidamente:
+        </p>
+        <ol>
+          <li>
+            <strong>Optimización del Formulario de Postulación:</strong>
+            Incorporar campos obligatorios y estructurados sobre voluntariados
+            previos, experiencia laboral, certificaciones de idiomas y,
+            crucialmente, métricas académicas (ranking, puntajes).
+          </li>
+          <li>
+            <strong>Medición de Habilidades Blandas:</strong> Sistematizar la
+            recolección de datos sobre competencias socioemocionales durante las
+            entrevistas para integrarlas al modelo.
+          </li>
+          <li>
+            <strong>Seguimiento Longitudinal:</strong> Vincular la base de datos
+            de selección con los indicadores de impacto en el aula, permitiendo
+            entrenar modelos que busquen "profesores efectivos" y no solo
+            "candidatos seleccionables".
+          </li>
+        </ol>
+
+        <p>
+          En conclusión, este análisis constituye un primer paso hacia la toma
+          de decisiones basada en datos. La implementación de mejoras en la
+          captura de información permitirá refinar estos hallazgos y potenciar
+          la estrategia de atracción de talento.
         </p>
       </section>
     </article>
