@@ -1,811 +1,761 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enseña Chile | Reporte de Análisis Estratégico</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enseña Chile | Reporte de Análisis Estratégico</title>
 
-    <style>
-      :root {
-        --bg-body: #ffffff;
-        --text-main: #222222;
-        --text-light: #555555;
-        --accent: #d93025;
-        --accent-light: #ffecec;
-        --border-color: #eaeaea;
-        --highlight-bg: #f9f9f9;
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
 
-      body {
-        font-family: "Lora", serif;
-        font-size: 19px;
-        line-height: 1.8;
-        color: var(--text-main);
-        margin: 0;
-        background: var(--bg-body);
-      }
+  <style>
+    :root {
+      --bg-body: #ffffff;
+      --text-main: #222222;
+      --text-light: #555555;
+      --accent: #d93025;
+      --accent-light: #ffecec;
+      --border-color: #eaeaea;
+      --highlight-bg: #f9f9f9;
+    }
 
-      /* Tipografía */
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
-        margin-top: 2em;
-        margin-bottom: 0.5em;
-        letter-spacing: -0.02em;
-        color: #111;
-      }
+    body {
+      font-family: "Lora", serif;
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--text-main);
+      margin: 0;
+      background: var(--bg-body);
+    }
 
+    /* Tipografía */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 15px;
+      margin-top: 3em;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 2em;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Header & Autores */
+    header {
+      text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 60px;
+    }
+
+    header .meta {
+      font-family: "Inter", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    header .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 20px auto 40px;
+      line-height: 1.5;
+    }
+
+    /* Nueva Sección de Autores */
+    .authors-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .author {
+      text-align: center;
+      font-family: "Inter", sans-serif;
+    }
+
+    .author img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .author-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .author-role {
+      font-size: 0.75rem;
+      color: #888;
+      display: block;
+    }
+
+    /* Componentes Visuales */
+    figure {
+      margin: 50px 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+    }
+
+    figcaption {
+      font-family: "Inter", sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 15px;
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+      text-align: left;
+      display: inline-block;
+      max-width: 90%;
+    }
+
+    /* Grid de KPIs */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+      background: var(--highlight-bg);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .kpi {
+      text-align: center;
+      font-family: "Inter", sans-serif;
+    }
+
+    .kpi .number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .kpi .label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* Highlight Boxes y Cards */
+    .highlight-box {
+      background-color: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 25px;
+      margin: 40px 0;
+      font-style: italic;
+    }
+
+    .todo-block {
+      background-color: #fff8c5;
+      border: 1px dashed #d4c060;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    /* Nuevo Estilo para el Perfil (Reemplaza el punteo básico) */
+    .profile-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .detail-item strong {
+      display: block;
+      color: var(--accent);
+      font-family: "Inter", sans-serif;
+      margin-bottom: 5px;
+    }
+
+    /* Listas numeradas estilizadas */
+    ol.strategic-list {
+      counter-reset: my-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    ol.strategic-list li {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 25px;
+    }
+
+    ol.strategic-list li::before {
+      counter-increment: my-counter;
+      content: counter(my-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 35px;
+      height: 35px;
+      background-color: var(--text-main);
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
       h1 {
-        font-size: 3rem;
-        line-height: 1.1;
-        margin-top: 0;
+        font-size: 2.2rem;
       }
 
-      h2 {
-        font-size: 1.8rem;
-        border-bottom: 2px solid var(--text-main);
-        padding-bottom: 15px;
-        margin-top: 3em;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        color: var(--accent);
-        margin-top: 2em;
-      }
-
-      h4 {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 0;
-      }
-
-      p {
-        margin-bottom: 1.5em;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 20px;
-      }
-
-      /* Header & Autores */
-      header {
-        text-align: center;
-        padding-bottom: 40px;
-        border-bottom: 1px solid var(--border-color);
-        margin-bottom: 60px;
-      }
-
-      header .meta {
-        font-family: "Inter", sans-serif;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 15px;
-        display: block;
-      }
-
-      header .subtitle {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        max-width: 700px;
-        margin: 20px auto 40px;
-        line-height: 1.5;
-      }
-
-      /* Nueva Sección de Autores */
-      .authors-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 40px;
-      }
-
-      .author {
-        text-align: center;
-        font-family: "Inter", sans-serif;
-      }
-
-      .author img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-        border: 2px solid #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .author-name {
-        font-size: 0.9rem;
-        font-weight: 600;
-        display: block;
-      }
-
-      .author-role {
-        font-size: 0.75rem;
-        color: #888;
-        display: block;
-      }
-
-      /* Componentes Visuales */
-      figure {
-        margin: 50px 0;
-        text-align: center;
-      }
-
-      figure img {
-        max-width: 100%;
-        height: auto;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 6px;
-      }
-
-      figcaption {
-        font-family: "Inter", sans-serif;
-        font-size: 0.85rem;
-        color: var(--text-light);
-        margin-top: 15px;
-        border-left: 3px solid var(--accent);
-        padding-left: 10px;
-        text-align: left;
-        display: inline-block;
-        max-width: 90%;
-      }
-
-      /* Grid de KPIs */
       .data-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 40px 0;
-        background: var(--highlight-bg);
-        padding: 30px;
-        border-radius: 8px;
+        grid-template-columns: 1fr;
       }
 
-      .kpi {
-        text-align: center;
-        font-family: "Inter", sans-serif;
-      }
-
-      .kpi .number {
-        display: block;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--accent);
-        line-height: 1.2;
-      }
-
-      .kpi .label {
-        font-size: 0.85rem;
-        color: var(--text-light);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-weight: 600;
-      }
-
-      /* Highlight Boxes y Cards */
-      .highlight-box {
-        background-color: var(--accent-light);
-        border-left: 4px solid var(--accent);
-        padding: 25px;
-        margin: 40px 0;
-        font-style: italic;
-      }
-
-      .todo-block {
-        background-color: #fff8c5;
-        border: 1px dashed #d4c060;
-        padding: 15px;
-        border-radius: 4px;
-        font-family: "Inter", sans-serif;
-        font-size: 0.9rem;
-        color: #555;
-        margin: 20px 0;
-      }
-
-      /* Nuevo Estilo para el Perfil (Reemplaza el punteo básico) */
-      .profile-card {
-        background: #fff;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        padding: 30px;
-        margin: 40px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .profile-header {
-        text-align: center;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
-      }
-
-      .profile-details {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      .authors-container {
         gap: 20px;
       }
+    }
+  </style>
+</head>
 
-      .detail-item strong {
-        display: block;
-        color: var(--accent);
-        font-family: "Inter", sans-serif;
-        margin-bottom: 5px;
-      }
+<body>
+  <article class="container">
+    <header>
+      <span class="meta">Proyecto de Ciencia de Datos &bull; Noviembre 2025</span>
+      <h1>
+        Radiografía del Talento:<br />Análisis de Reclutamiento Enseña Chile
+      </h1>
 
-      /* Listas numeradas estilizadas */
-      ol.strategic-list {
-        counter-reset: my-counter;
-        list-style: none;
-        padding: 0;
-      }
-
-      ol.strategic-list li {
-        position: relative;
-        padding-left: 50px;
-        margin-bottom: 25px;
-      }
-
-      ol.strategic-list li::before {
-        counter-increment: my-counter;
-        content: counter(my-counter);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 35px;
-        height: 35px;
-        background-color: var(--text-main);
-        color: #fff;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 35px;
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      footer {
-        background: #111;
-        color: #fff;
-        padding: 60px 20px;
-        text-align: center;
-        margin-top: 80px;
-      }
-
-      footer p {
-        color: #888;
-        font-size: 0.9rem;
-      }
-      footer a {
-        color: #fff;
-        text-decoration: underline;
-      }
-
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2.2rem;
-        }
-        .data-grid {
-          grid-template-columns: 1fr;
-        }
-        .authors-container {
-          gap: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <article class="container">
-      <header>
-        <span class="meta"
-          >Proyecto de Ciencia de Datos &bull; Noviembre 2025</span
-        >
-        <h1>
-          Radiografía del Talento:<br />Análisis de Reclutamiento Enseña Chile
-        </h1>
-
-        <div class="authors-container">
-          <div class="author">
-            <img src="imagenes/Sergio.jpg" alt="Sergio" />
-            <span class="author-name">Sergio Hernández</span>
-          </div>
-          <div class="author">
-            <img src="imagenes/Francisco.jpg" alt="Francisco" />
-            <span class="author-name">Francisco Maureira</span>
-          </div>
-          <div class="author">
-            <img src="imagenes/mario_hugo.png" alt="Sebastián" />
-            <span class="author-name">Sebastián</span>
-          </div>
-          <div class="author">
-            <img src="imagenes/patana.png" alt="Cristóbal" />
-            <span class="author-name">Cristóbal Lyon</span>
-          </div>
+      <div class="authors-container">
+        <div class="author">
+          <img src="imagenes/Sergio.jpg" alt="Sergio" />
+          <span class="author-name">Sergio Hernández</span>
         </div>
+        <div class="author">
+          <img src="imagenes/Francisco.jpg" alt="Francisco" />
+          <span class="author-name">Francisco Maureira</span>
+        </div>
+        <div class="author">
+          <img src="imagenes/mario_hugo.png" alt="Sebastián" />
+          <span class="author-name">Sebastián</span>
+        </div>
+        <div class="author">
+          <img src="imagenes/cristóbal.png" alt="Cristóbal" />
+          <span class="author-name">Cristóbal Lyon</span>
+        </div>
+      </div>
 
-        <p class="subtitle">
-          Un viaje a través de los datos para entender quiénes postulan, quiénes
-          quedan seleccionados y cómo optimizar la búsqueda de los futuros
-          líderes de la educación chilena.
-        </p>
-      </header>
-      <section>
-        <p>
-          Enseña Chile posee una misión definida, pero la identificación de
-          profesionales idóneos involucra múltiples variables complejas.
-          Históricamente, el proceso de selección ha generado un volumen de
-          datos que, analizados en profundidad, revelan patrones determinantes
-          sobre el origen y las características del talento seleccionado.
-        </p>
-        <p>
-          El presente análisis examina
-          <strong>15 años de registros históricos</strong> con el objetivo de
-          proponer una estrategia de reclutamiento basada en evidencia empírica.
-          Se busca optimizar la asignación de recursos y sistematizar la
-          búsqueda de candidatos que cumplan con los altos estándares de la
-          organización.
-        </p>
-      </section>
+      <p class="subtitle">
+        Un viaje a través de los datos para entender quiénes postulan, quiénes
+        quedan seleccionados y cómo optimizar la búsqueda de los futuros
+        líderes de la educación chilena.
+      </p>
+    </header>
+    <section>
+      <p>
+        Enseña Chile posee una misión definida, pero la identificación de
+        profesionales idóneos involucra múltiples variables complejas.
+        Históricamente, el proceso de selección ha generado un volumen de
+        datos que, analizados en profundidad, revelan patrones determinantes
+        sobre el origen y las características del talento seleccionado.
+      </p>
+      <p>
+        El presente análisis examina
+        <strong>15 años de registros históricos</strong> con el objetivo de
+        proponer una estrategia de reclutamiento basada en evidencia empírica.
+        Se busca optimizar la asignación de recursos y sistematizar la
+        búsqueda de candidatos que cumplan con los altos estándares de la
+        organización.
+      </p>
+    </section>
 
-      <nav
-        class="table-of-contents"
-        style="
+    <nav class="table-of-contents" style="
           margin-bottom: 50px;
           padding: 20px;
           background: #f9f9f9;
           border-left: 4px solid #202124;
-        "
-      >
-        <h3 style="margin-top: 0; font-size: 1.1rem; color: #333">
-          Tabla de Contenidos
-        </h3>
-        <ol>
-          <li>
-            <a style="color: #222222" href="#perfil-postulante"
-              >Perfil Demográfico y Académico del Postulante</a
-            >
-          </li>
-          <li>
-            <a style="color: #222222" href="#embudo-seleccion"
-              >Análisis del Embudo: Perfil del Seleccionado</a
-            >
-          </li>
-          <li>
-            <a style="color: #222222" href="#estudio-oportunidad"
-              >Análisis de Mercado y Oferta Académica</a
-            >
-          </li>
-          <li>
-            <a style="color: #222222" href="#modelando-exito"
-              >Modelos Predictivos</a
-            >
-          </li>
-          <li>
-            <a style="color: #222222" href="#conclusiones"
-              >Conclusiones Estratégicas</a
-            >
-          </li>
-          <li>
-            <a style="color: #222222" href="#comentarios"
-              >Limitaciones y Trabajo Futuro</a
-            >
-          </li>
-        </ol>
-      </nav>
+        ">
+      <h3 style="margin-top: 0; font-size: 1.1rem; color: #333">
+        Tabla de Contenidos
+      </h3>
+      <ol>
+        <li>
+          <a style="color: #222222" href="#perfil-postulante">Perfil Demográfico y Académico del Postulante</a>
+        </li>
+        <li>
+          <a style="color: #222222" href="#embudo-seleccion">Análisis del Embudo: Perfil del Seleccionado</a>
+        </li>
+        <li>
+          <a style="color: #222222" href="#estudio-oportunidad">Análisis de Mercado y Oferta Académica</a>
+        </li>
+        <li>
+          <a style="color: #222222" href="#modelando-exito">Modelos Predictivos</a>
+        </li>
+        <li>
+          <a style="color: #222222" href="#conclusiones">Conclusiones Estratégicas</a>
+        </li>
+        <li>
+          <a style="color: #222222" href="#comentarios">Limitaciones y Trabajo Futuro</a>
+        </li>
+      </ol>
+    </nav>
 
-      <section id="perfil-postulante">
-        <h2>1. Perfil Demográfico y Académico del Postulante</h2>
-        <p>
-          La propuesta de valor de Enseña Chile se fundamenta en la atracción de
-          profesionales de alto desempeño para impactar en contextos educativos
-          vulnerables. El análisis de la base histórica de postulantes permite
-          validar si la convocatoria actual resuena con el perfil objetivo de la
-          organización.
-        </p>
+    <section id="perfil-postulante">
+      <h2>1. Perfil Demográfico y Académico del Postulante</h2>
+      <p>
+        La propuesta de valor de Enseña Chile se fundamenta en la atracción de
+        profesionales de alto desempeño para impactar en contextos educativos
+        vulnerables. El análisis de la base histórica de postulantes permite
+        validar si la convocatoria actual resuena con el perfil objetivo de la
+        organización.
+      </p>
 
-        <div class="data-grid">
-          <div class="kpi">
-            <span class="number">697.490</span>
-            <span class="label">Total de Postulaciones</span>
+      <div class="data-grid">
+        <div class="kpi">
+          <span class="number">697.490</span>
+          <span class="label">Total de Postulaciones</span>
+        </div>
+        <div class="kpi">
+          <span class="number">2.3%</span>
+          <span class="label">Tasa de Selección Global</span>
+        </div>
+        <div class="kpi">
+          <span class="number">38</span>
+          <span class="label">Edad Promedio</span>
+        </div>
+      </div>
+
+      <h3>Distribución por Institución de Origen</h3>
+      <p>
+        Los datos evidencian una concentración significativa de postulantes
+        provenientes de instituciones universitarias tradicionales. Esto
+        sugiere que el posicionamiento de marca de la fundación es efectivo en
+        segmentos académicos específicos, atrayendo a perfiles que valoran el
+        desempeño académico y el liderazgo social.
+      </p>
+
+      <figure>
+        <img src="imagenes/Top 10 Universidades en Postulaciones.png" alt="Gráfico de postulantes por universidad" />
+        <figcaption>
+          Fig 1. Volumen de postulaciones desglosado por institución de
+          educación superior.
+        </figcaption>
+      </figure>
+
+      <h3>Análisis Etario</h3>
+      <p>
+        Se observa una diversidad etaria considerable en la base de
+        postulantes. Con un promedio de 38 años (ver <em>Fig 2</em>), el
+        interés por el programa no se limita a recién egresados, abarcando
+        también a profesionales con trayectoria laboral consolidada. No
+        obstante, el factor determinante en la selección posterior parece
+        estar más correlacionado con la formación académica que con la edad.
+      </p>
+
+      <figure>
+        <img src="imagenes/Distribución de Edad en Postulantes.png" alt="Gráfico de distribución de edad" />
+        <figcaption>
+          Fig 2. Histograma de distribución de edad de los postulantes.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="embudo-seleccion">
+      <h2>2. Análisis del Embudo: Características del Perfil Seleccionado</h2>
+      <p>
+        Al examinar el segmento de candidatos que superan todas las etapas del
+        proceso ("Seleccionados"), se identifican patrones rígidos en cuanto a
+        la formación de origen. Los datos históricos indican que la
+        organización prioriza competencias analíticas y una formación
+        académica rigurosa.
+      </p>
+
+      <h3>Prevalencia de Ingeniería y Universidades Complejas</h3>
+      <p>
+        Las estadísticas revelan una inclinación predominante hacia perfiles
+        técnicos de alta exigencia:
+        <strong>las carreras de ingeniería representan el 63% del total histórico
+          de seleccionados</strong>.
+      </p>
+
+      <figure>
+        <img src="imagenes/tendencia_top5_carreras.png" alt="Gráfico de tendencia de carreras seleccionadas" />
+        <figcaption>
+          Fig 3. Evolución histórica de seleccionados agrupados por carrera,
+          destacando Ingeniería Civil y Comercial.
+        </figcaption>
+      </figure>
+
+      <h3>Instituciones con Mayor Tasa de Conversión</h3>
+      <p>
+        Existe una correlación directa entre la institución de egreso y la
+        probabilidad de selección. Históricamente, los candidatos provenientes
+        de la <strong>Pontificia Universidad Católica (UC)</strong> y la
+        <strong>Universidad de Chile (UCH)</strong> presentan las tasas de
+        efectividad más altas.
+      </p>
+
+      <div class="profile-card" style="border-left: 5px solid #444">
+        <div class="profile-header">
+          <h4>Perfil de Referencia Histórico</h4>
+          <span style="color: #555; font-size: 0.9rem">Basado en tasas de conversión</span>
+        </div>
+        <div class="profile-details">
+          <div class="detail-item">
+            <strong>Instituciones Principales</strong>
+            UC y Universidad de Chile.
           </div>
-          <div class="kpi">
-            <span class="number">2.3%</span>
-            <span class="label">Tasa de Selección Global</span>
-          </div>
-          <div class="kpi">
-            <span class="number">38</span>
-            <span class="label">Edad Promedio</span>
+          <div class="detail-item">
+            <strong>Áreas de Formación</strong>
+            Ingeniería Civil e Ingeniería Comercial.
           </div>
         </div>
+      </div>
 
-        <h3>Distribución por Institución de Origen</h3>
-        <p>
-          Los datos evidencian una concentración significativa de postulantes
-          provenientes de instituciones universitarias tradicionales. Esto
-          sugiere que el posicionamiento de marca de la fundación es efectivo en
-          segmentos académicos específicos, atrayendo a perfiles que valoran el
-          desempeño académico y el liderazgo social.
+      <figure>
+        <img src="imagenes/Top 10 Universidades en Seleccionados.png" alt="Gráfico de universidades seleccionadas" />
+        <figcaption>
+          Fig 4. Participación porcentual de las distintas universidades en el
+          total de seleccionados.
+        </figcaption>
+      </figure>
+
+      <div class="highlight-box" style="background-color: #f1f3f4; border-color: #888">
+        <strong>Diagnóstico Estratégico:</strong>
+        <p style="margin-bottom: 0">
+          Enseña Chile mantiene un estándar de selección enfocado en la
+          excelencia académica. El objetivo estratégico no consiste en
+          flexibilizar estos requisitos, sino en identificar nuevos segmentos
+          de candidatos que cumplan con este mismo nivel de rigor y que
+          actualmente no están siendo captados.
         </p>
+      </div>
+    </section>
 
-        <figure>
-          <img
-            src="imagenes/Top 10 Universidades en Postulaciones.png"
-            alt="Gráfico de postulantes por universidad"
-          />
-          <figcaption>
-            Fig 1. Volumen de postulaciones desglosado por institución de
-            educación superior.
-          </figcaption>
-        </figure>
+    <section id="estudio-oportunidad">
+      <h2>3. Análisis de Mercado y Oferta Académica Nacional</h2>
 
-        <h3>Análisis Etario</h3>
-        <p>
-          Se observa una diversidad etaria considerable en la base de
-          postulantes. Con un promedio de 38 años (ver <em>Fig 2</em>), el
-          interés por el programa no se limita a recién egresados, abarcando
-          también a profesionales con trayectoria laboral consolidada. No
-          obstante, el factor determinante en la selección posterior parece
-          estar más correlacionado con la formación académica que con la edad.
-        </p>
+      <p>
+        Se realizó un cruce de información entre los datos internos y la base
+        de titulados del <strong>MINEDUC (últimos 5 años)</strong>. Este
+        análisis permite distinguir entre la oferta masiva de profesionales y
+        aquellos segmentos específicos que se alinean con los requisitos de la
+        fundación.
+      </p>
 
-        <figure>
-          <img
-            src="imagenes/Distribución de Edad en Postulantes.png"
-            alt="Gráfico de distribución de edad"
-          />
-          <figcaption>
-            Fig 2. Histograma de distribución de edad de los postulantes.
-          </figcaption>
-        </figure>
-      </section>
+      <h3>Volumen vs. Alineación de Perfil</h3>
+      <p>
+        Los datos del sistema educativo muestran un alto volumen de titulados
+        en instituciones técnicas y universidades masivas (ej. INACAP).
+        <br /><br />
+        <strong>Análisis de Ajuste:</strong> Si bien estas instituciones
+        aportan un gran número de egresados al mercado laboral, el análisis de
+        competencias y perfil académico sugiere que el foco de reclutamiento
+        para Enseña Chile —dado su énfasis en formación universitaria
+        compleja— no debe centrarse en el volumen, sino en la equivalencia de
+        estándares académicos.
+      </p>
 
-      <section id="embudo-seleccion">
-        <h2>2. Análisis del Embudo: Características del Perfil Seleccionado</h2>
-        <p>
-          Al examinar el segmento de candidatos que superan todas las etapas del
-          proceso ("Seleccionados"), se identifican patrones rígidos en cuanto a
-          la formación de origen. Los datos históricos indican que la
-          organización prioriza competencias analíticas y una formación
-          académica rigurosa.
-        </p>
+      <figure>
+        <img src="imagenes/Top 10 Universidades con más Titulados Idóneos.png" alt="Gráfico de oferta de mercado" />
+        <figcaption>
+          Fig 5. Oferta total de titulados en el mercado nacional.
+        </figcaption>
+      </figure>
 
-        <h3>Prevalencia de Ingeniería y Universidades Complejas</h3>
-        <p>
-          Las estadísticas revelan una inclinación predominante hacia perfiles
-          técnicos de alta exigencia:
-          <strong
-            >las carreras de ingeniería representan el 63% del total histórico
-            de seleccionados</strong
-          >.
-        </p>
+      <h3>Identificación de Instituciones Pares</h3>
+      <p>
+        Al filtrar el mercado por complejidad académica y rigor en ingeniería,
+        se identifican tres instituciones que presentan un perfil de egreso
+        comparable al de la UC y la UCH, pero que cuentan con una
+        sub-representación histórica en la selección:
+      </p>
+      <ul>
+        <li>
+          <strong>Universidad Técnica Federico Santa María (USM):</strong>
+          Institución con un fuerte enfoque en ciencias duras e ingeniería,
+          cuyas competencias matemáticas se alinean con los requisitos del
+          programa.
+        </li>
+        <li>
+          <strong>Universidad Adolfo Ibáñez (UAI):</strong> Especialmente en
+          su sede de Viña del Mar, ofrece candidatos con formación en negocios
+          e ingeniería, combinando liderazgo y capacidad analítica.
+        </li>
+        <li>
+          <strong>Universidad Andrés Bello (UNAB):</strong> Cuenta con
+          programas de ingeniería y ciencias exactas consolidados que
+          representan una fuente de talento adicional a considerar.
+        </li>
+      </ul>
 
-        <figure>
-          <img
-            src="imagenes/tendencia_top5_carreras.png"
-            alt="Gráfico de tendencia de carreras seleccionadas"
-          />
-          <figcaption>
-            Fig 3. Evolución histórica de seleccionados agrupados por carrera,
-            destacando Ingeniería Civil y Comercial.
-          </figcaption>
-        </figure>
+      <figure>
+        <img src="imagenes/Titulados Idóneos por Región.png" alt="Gráfico de titulados por región" />
+        <figcaption>
+          Fig 6. Distribución geográfica de titulados idóneos, destacando la
+          Región de Valparaíso como un polo estratégico de talento.
+        </figcaption>
+      </figure>
+    </section>
 
-        <h3>Instituciones con Mayor Tasa de Conversión</h3>
-        <p>
-          Existe una correlación directa entre la institución de egreso y la
-          probabilidad de selección. Históricamente, los candidatos provenientes
-          de la <strong>Pontificia Universidad Católica (UC)</strong> y la
-          <strong>Universidad de Chile (UCH)</strong> presentan las tasas de
-          efectividad más altas.
-        </p>
+    <section id="modelando-exito">
+      <h2>4. A laburar.....</h2>
+    </section>
 
-        <div class="profile-card" style="border-left: 5px solid #444">
-          <div class="profile-header">
-            <h4>Perfil de Referencia Histórico</h4>
-            <span style="color: #555; font-size: 0.9rem"
-              >Basado en tasas de conversión</span
-            >
-          </div>
-          <div class="profile-details">
-            <div class="detail-item">
-              <strong>Instituciones Principales</strong>
-              UC y Universidad de Chile.
-            </div>
-            <div class="detail-item">
-              <strong>Áreas de Formación</strong>
-              Ingeniería Civil e Ingeniería Comercial.
-            </div>
-          </div>
-        </div>
+    <section id="conclusiones">
+      <h2>5. Conclusiones y Propuesta Estratégica</h2>
+      <p>
+        El análisis de datos confirma que la estrategia óptima para Enseña
+        Chile no es modificar su perfil de ingreso, sino
+        <strong>expandir su búsqueda hacia instituciones equivalentes en exigencia
+          académica</strong>. La decisión de mantener el foco en la formación universitaria de
+        alta complejidad es coherente con los objetivos de la fundación.
+      </p>
 
-        <figure>
-          <img
-            src="imagenes/Top 10 Universidades en Seleccionados.png"
-            alt="Gráfico de universidades seleccionadas"
-          />
-          <figcaption>
-            Fig 4. Participación porcentual de las distintas universidades en el
-            total de seleccionados.
-          </figcaption>
-        </figure>
+      <h3>Estrategia de Consolidación y Expansión</h3>
+      <p>
+        Se recomienda una estrategia de reclutamiento focalizada en tres ejes
+        para maximizar la captación de talento idóneo:
+      </p>
 
-        <div
-          class="highlight-box"
-          style="background-color: #f1f3f4; border-color: #888"
-        >
-          <strong>Diagnóstico Estratégico:</strong>
-          <p style="margin-bottom: 0">
-            Enseña Chile mantiene un estándar de selección enfocado en la
-            excelencia académica. El objetivo estratégico no consiste en
-            flexibilizar estos requisitos, sino en identificar nuevos segmentos
-            de candidatos que cumplan con este mismo nivel de rigor y que
-            actualmente no están siendo captados.
-          </p>
-        </div>
-      </section>
+      <ol class="strategic-list">
+        <li>
+          <strong>Profundización en el Núcleo (UC y UCH):</strong>
+          <br />Mantener la presencia en las facultades de Ingeniería, pero
+          ampliar activamente la convocatoria hacia carreras de alta exigencia
+          cuantitativa y científica que hoy tienen menor visibilidad, tales
+          como
+          <strong>Licenciatura en Matemáticas, Estadística, Licenciatura en Ciencia
+            de Datos y Computación</strong>.
+        </li>
+        <li>
+          <strong>Incorporación de Pares Académicos (USM, UAI y UNAB):</strong>
+          <br />Reconocer a la
+          <strong>Universidad Técnica Federico Santa María</strong>, la
+          <strong>Universidad Adolfo Ibáñez</strong> y la
+          <strong>Universidad Andrés Bello</strong> como fuentes prioritarias
+          de reclutamiento. Sus egresados de ingeniería poseen un perfil
+          técnico comparable al núcleo tradicional y representan una
+          oportunidad de crecimiento sin sacrificio de estándares.
+        </li>
+        <li>
+          <strong>Descentralización Estratégica:</strong>
+          <br />Focalizar los esfuerzos regionales en polos de alta calidad
+          académica específica, concretamente la
+          <strong>UAI Viña del Mar</strong> y la
+          <strong>USM Valparaíso</strong>. Esto permite descentralizar la
+          selección asegurando la equivalencia de competencias.
+        </li>
+      </ol>
 
-      <section id="estudio-oportunidad">
-        <h2>3. Análisis de Mercado y Oferta Académica Nacional</h2>
+      <h3>Análisis de Riesgo</h3>
+      <p>
+        El principal riesgo detectado no es la exclusión de la formación
+        técnica masiva, ya que esta no se alinea con el perfil actual buscado.
+        <strong>El riesgo latente es el sesgo de selección dentro de la élite
+          académica</strong>: limitar la búsqueda exclusivamente a dos universidades (UC/UCH)
+        implica desaprovechar un contingente de profesionales de la USM y UAI
+        que poseen las mismas capacidades de liderazgo y rigor intelectual
+        necesarias para el aula.
+      </p>
+    </section>
 
-        <p>
-          Se realizó un cruce de información entre los datos internos y la base
-          de titulados del <strong>MINEDUC (últimos 5 años)</strong>. Este
-          análisis permite distinguir entre la oferta masiva de profesionales y
-          aquellos segmentos específicos que se alinean con los requisitos de la
-          fundación.
-        </p>
-
-        <h3>Volumen vs. Alineación de Perfil</h3>
-        <p>
-          Los datos del sistema educativo muestran un alto volumen de titulados
-          en instituciones técnicas y universidades masivas (ej. INACAP).
-          <br /><br />
-          <strong>Análisis de Ajuste:</strong> Si bien estas instituciones
-          aportan un gran número de egresados al mercado laboral, el análisis de
-          competencias y perfil académico sugiere que el foco de reclutamiento
-          para Enseña Chile —dado su énfasis en formación universitaria
-          compleja— no debe centrarse en el volumen, sino en la equivalencia de
-          estándares académicos.
-        </p>
-
-        <figure>
-          <img
-            src="imagenes/Top 10 Universidades con más Titulados Idóneos.png"
-            alt="Gráfico de oferta de mercado"
-          />
-          <figcaption>
-            Fig 5. Oferta total de titulados en el mercado nacional.
-          </figcaption>
-        </figure>
-
-        <h3>Identificación de Instituciones Pares</h3>
-        <p>
-          Al filtrar el mercado por complejidad académica y rigor en ingeniería,
-          se identifican tres instituciones que presentan un perfil de egreso
-          comparable al de la UC y la UCH, pero que cuentan con una
-          sub-representación histórica en la selección:
-        </p>
-        <ul>
-          <li>
-            <strong>Universidad Técnica Federico Santa María (USM):</strong>
-            Institución con un fuerte enfoque en ciencias duras e ingeniería,
-            cuyas competencias matemáticas se alinean con los requisitos del
-            programa.
-          </li>
-          <li>
-            <strong>Universidad Adolfo Ibáñez (UAI):</strong> Especialmente en
-            su sede de Viña del Mar, ofrece candidatos con formación en negocios
-            e ingeniería, combinando liderazgo y capacidad analítica.
-          </li>
-          <li>
-            <strong>Universidad Andrés Bello (UNAB):</strong> Cuenta con
-            programas de ingeniería y ciencias exactas consolidados que
-            representan una fuente de talento adicional a considerar.
-          </li>
-        </ul>
-
-        <figure>
-          <img
-            src="imagenes/Titulados Idóneos por Región.png"
-            alt="Gráfico de titulados por región"
-          />
-          <figcaption>
-            Fig 6. Distribución geográfica de titulados idóneos, destacando la
-            Región de Valparaíso como un polo estratégico de talento.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section id="modelando-exito">
-        <h2>4. A laburar.....</h2>
-      </section>
-
-      <section id="conclusiones">
-        <h2>5. Conclusiones y Propuesta Estratégica</h2>
-        <p>
-          El análisis de datos confirma que la estrategia óptima para Enseña
-          Chile no es modificar su perfil de ingreso, sino
-          <strong
-            >expandir su búsqueda hacia instituciones equivalentes en exigencia
-            académica</strong
-          >. La decisión de mantener el foco en la formación universitaria de
-          alta complejidad es coherente con los objetivos de la fundación.
-        </p>
-
-        <h3>Estrategia de Consolidación y Expansión</h3>
-        <p>
-          Se recomienda una estrategia de reclutamiento focalizada en tres ejes
-          para maximizar la captación de talento idóneo:
-        </p>
-
-        <ol class="strategic-list">
-          <li>
-            <strong>Profundización en el Núcleo (UC y UCH):</strong>
-            <br />Mantener la presencia en las facultades de Ingeniería, pero
-            ampliar activamente la convocatoria hacia carreras de alta exigencia
-            cuantitativa y científica que hoy tienen menor visibilidad, tales
-            como
-            <strong
-              >Licenciatura en Matemáticas, Estadística, Licenciatura en Ciencia
-              de Datos y Computación</strong
-            >.
-          </li>
-          <li>
-            <strong
-              >Incorporación de Pares Académicos (USM, UAI y UNAB):</strong
-            >
-            <br />Reconocer a la
-            <strong>Universidad Técnica Federico Santa María</strong>, la
-            <strong>Universidad Adolfo Ibáñez</strong> y la
-            <strong>Universidad Andrés Bello</strong> como fuentes prioritarias
-            de reclutamiento. Sus egresados de ingeniería poseen un perfil
-            técnico comparable al núcleo tradicional y representan una
-            oportunidad de crecimiento sin sacrificio de estándares.
-          </li>
-          <li>
-            <strong>Descentralización Estratégica:</strong>
-            <br />Focalizar los esfuerzos regionales en polos de alta calidad
-            académica específica, concretamente la
-            <strong>UAI Viña del Mar</strong> y la
-            <strong>USM Valparaíso</strong>. Esto permite descentralizar la
-            selección asegurando la equivalencia de competencias.
-          </li>
-        </ol>
-
-        <h3>Análisis de Riesgo</h3>
-        <p>
-          El principal riesgo detectado no es la exclusión de la formación
-          técnica masiva, ya que esta no se alinea con el perfil actual buscado.
-          <strong
-            >El riesgo latente es el sesgo de selección dentro de la élite
-            académica</strong
-          >: limitar la búsqueda exclusivamente a dos universidades (UC/UCH)
-          implica desaprovechar un contingente de profesionales de la USM y UAI
-          que poseen las mismas capacidades de liderazgo y rigor intelectual
-          necesarias para el aula.
-        </p>
-      </section>
-
-      <section
-        id="comentarios"
-        style="
+    <section id="comentarios" style="
           background-color: #fcfcfc;
           border-top: 1px solid #e0e0e0;
           padding-top: 20px;
           margin-top: 40px;
-        "
-      >
-        <h2>6. Limitaciones del Estudio y Recomendaciones Futuras</h2>
+        ">
+      <h2>6. Limitaciones del Estudio y Recomendaciones Futuras</h2>
 
-        <h3>Oportunidad: Arbitraje de Empleabilidad</h3>
-        <p>
-          Para futuras iteraciones de este análisis, se sugiere incorporar
-          variables de
-          <strong>tasas de empleabilidad por carrera e institución</strong>. Una
-          hipótesis de alto valor estratégico es identificar carreras con altos
-          estándares académicos pero saturación laboral o empleabilidad
-          moderada. Estos nichos representan una oportunidad eficiente de
-          reclutamiento, ya que el costo de oportunidad para el postulante es
-          menor, aumentando la probabilidad de atracción y retención.
-        </p>
+      <h3>Oportunidad: Arbitraje de Empleabilidad</h3>
+      <p>
+        Para futuras iteraciones de este análisis, se sugiere incorporar
+        variables de
+        <strong>tasas de empleabilidad por carrera e institución</strong>. Una
+        hipótesis de alto valor estratégico es identificar carreras con altos
+        estándares académicos pero saturación laboral o empleabilidad
+        moderada. Estos nichos representan una oportunidad eficiente de
+        reclutamiento, ya que el costo de oportunidad para el postulante es
+        menor, aumentando la probabilidad de atracción y retención.
+      </p>
 
-        <h3>Limitaciones de la Data Histórica</h3>
-        <p>
-          El presente estudio enfrentó restricciones significativas debido a la
-          estructura de los datos proporcionados:
-        </p>
-        <ul>
-          <li>
-            <strong>Falta de granularidad demográfica:</strong> La ausencia de
-            datos estructurados sobre la región de origen, género y nivel
-            socioeconómico de los postulantes limitó la capacidad de realizar un
-            análisis de diversidad más profundo.
-          </li>
-          <li>
-            <strong>Ausencia de métricas de desempeño:</strong> No se contó con
-            acceso a evaluaciones de desempeño docente posterior a la selección.
-            Esto impide cerrar el ciclo de análisis (feedback loop) para
-            determinar qué variables de entrada predicen realmente el éxito en
-            el aula.
-          </li>
-          <li>
-            <strong>Proxies de Excelencia:</strong> Al no disponer de puntajes
-            de ingreso (PAES/PSU) ni promedios de notas de los candidatos, se
-            debió recurrir a la Universidad y Carrera como <em>proxies</em> de
-            excelencia académica.
-          </li>
-        </ul>
+      <h3>Limitaciones de la Data Histórica</h3>
+      <p>
+        El presente estudio enfrentó restricciones significativas debido a la
+        estructura de los datos proporcionados:
+      </p>
+      <ul>
+        <li>
+          <strong>Falta de granularidad demográfica:</strong> La ausencia de
+          datos estructurados sobre la región de origen, género y nivel
+          socioeconómico de los postulantes limitó la capacidad de realizar un
+          análisis de diversidad más profundo.
+        </li>
+        <li>
+          <strong>Ausencia de métricas de desempeño:</strong> No se contó con
+          acceso a evaluaciones de desempeño docente posterior a la selección.
+          Esto impide cerrar el ciclo de análisis (feedback loop) para
+          determinar qué variables de entrada predicen realmente el éxito en
+          el aula.
+        </li>
+        <li>
+          <strong>Proxies de Excelencia:</strong> Al no disponer de puntajes
+          de ingreso (PAES/PSU) ni promedios de notas de los candidatos, se
+          debió recurrir a la Universidad y Carrera como <em>proxies</em> de
+          excelencia académica.
+        </li>
+      </ul>
 
-        <h3>Recomendaciones para la Gestión de Datos</h3>
-        <p>
-          Para robustecer los modelos predictivos y el análisis estratégico, se
-          recomienda encarecidamente:
-        </p>
-        <ol>
-          <li>
-            <strong>Optimización del Formulario de Postulación:</strong>
-            Incorporar campos obligatorios y estructurados sobre voluntariados
-            previos, experiencia laboral, certificaciones de idiomas y,
-            crucialmente, métricas académicas (ranking, puntajes).
-          </li>
-          <li>
-            <strong>Medición de Habilidades Blandas:</strong> Sistematizar la
-            recolección de datos sobre competencias socioemocionales durante las
-            entrevistas para integrarlas al modelo.
-          </li>
-          <li>
-            <strong>Seguimiento Longitudinal:</strong> Vincular la base de datos
-            de selección con los indicadores de impacto en el aula, permitiendo
-            entrenar modelos que busquen "profesores efectivos" y no solo
-            "candidatos seleccionables".
-          </li>
-        </ol>
+      <h3>Recomendaciones para la Gestión de Datos</h3>
+      <p>
+        Para robustecer los modelos predictivos y el análisis estratégico, se
+        recomienda encarecidamente:
+      </p>
+      <ol>
+        <li>
+          <strong>Optimización del Formulario de Postulación:</strong>
+          Incorporar campos obligatorios y estructurados sobre voluntariados
+          previos, experiencia laboral, certificaciones de idiomas y,
+          crucialmente, métricas académicas (ranking, puntajes).
+        </li>
+        <li>
+          <strong>Medición de Habilidades Blandas:</strong> Sistematizar la
+          recolección de datos sobre competencias socioemocionales durante las
+          entrevistas para integrarlas al modelo.
+        </li>
+        <li>
+          <strong>Seguimiento Longitudinal:</strong> Vincular la base de datos
+          de selección con los indicadores de impacto en el aula, permitiendo
+          entrenar modelos que busquen "profesores efectivos" y no solo
+          "candidatos seleccionables".
+        </li>
+      </ol>
 
-        <p>
-          En conclusión, este análisis constituye un primer paso hacia la toma
-          de decisiones basada en datos. La implementación de mejoras en la
-          captura de información permitirá refinar estos hallazgos y potenciar
-          la estrategia de atracción de talento.
-        </p>
-      </section>
-    </article>
+      <p>
+        En conclusión, este análisis constituye un primer paso hacia la toma
+        de decisiones basada en datos. La implementación de mejoras en la
+        captura de información permitirá refinar estos hallazgos y potenciar
+        la estrategia de atracción de talento.
+      </p>
+    </section>
+  </article>
 
-    <footer>
-      <div class="container" style="padding: 0">
-        <h4 style="color: #fff; margin-bottom: 20px">
-          Equipo de Ciencia de Datos
-        </h4>
-        <p style="margin-bottom: 30px">
-          Sergio Hernández &bull; Francisco Maureira &bull; Sebastián &bull;
-          Cristóbal Lyon
-        </p>
-        <p style="font-size: 0.8rem; color: #666">
-          Proyecto Semestral IMT2200 <br />
-          Pontificia Universidad Católica de Chile
-        </p>
-        <p style="margin-top: 30px">
-          <a href="https://github.com/SergioHdezDC/IMT2200-Proyecto-Semestral"
-            >Ver Repositorio en GitHub</a
-          >
-        </p>
-      </div>
-    </footer>
-  </body>
+  <footer>
+    <div class="container" style="padding: 0">
+      <h4 style="color: #fff; margin-bottom: 20px">
+        Equipo de Ciencia de Datos
+      </h4>
+      <p style="margin-bottom: 30px">
+        Sergio Hernández &bull; Francisco Maureira &bull; Sebastián &bull;
+        Cristóbal Lyon
+      </p>
+      <p style="font-size: 0.8rem; color: #666">
+        Proyecto Semestral IMT2200 <br />
+        Pontificia Universidad Católica de Chile
+      </p>
+      <p style="margin-top: 30px">
+        <a href="https://github.com/SergioHdezDC/IMT2200-Proyecto-Semestral">Ver Repositorio en GitHub</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>
